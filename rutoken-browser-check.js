@@ -7,7 +7,7 @@ var rutokenBrowserCheck = (function (rc) {
             throw "Браузер временно не поддерживается. Пожалуйста, воспользуйтесь браузером Apple Safari или Mozilla Firefox.";
         }
 
-        var isChrome = !!window.chrome;
+        var isChromeCompat = !!window.chrome;
         var verOffset, fullVersion, majorVerison;
         var performCheck = true;
         if (bowser.msedge) throw 'Браузер временно не поддерживается.';
@@ -22,7 +22,7 @@ var rutokenBrowserCheck = (function (rc) {
             if (bowser.version < 50)
                 performCheck = false;
         }
-        if (performCheck && (bowser.name === 'Chrome' || bowser.name === 'Firefox') && bowser.osname === 'Windows') {
+        if (performCheck && (isChromeCompat || bowser.name === 'Firefox') && bowser.osname === 'Windows') {
             return extensionCheckFunction();
         } else {
             return true;

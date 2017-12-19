@@ -14,9 +14,9 @@ window.onload = function () {
  rutoken.ready.then(function () {
         return rutokenBrowserCheck.ifCompatible(rutoken.isExtensionInstalled);
     }).then(function (result) {
-            return result ? rutoken.isPluginInstalled() : rutokenBrowserCheck.noExtension();
+        return result ? rutoken.isPluginInstalled() : rutokenBrowserCheck.noExtension();
     }).then(function (result) {
-            return result ? rutoken.loadPlugin() : rutokenBrowserCheck.noPlugin();        
+        return result ? rutoken.loadPlugin() : rutokenBrowserCheck.noPlugin();        
     }).then(function (plugin) {
     	//Можно начинать работать с плагином
     	//Только для работы через старый интерфейс плагина
