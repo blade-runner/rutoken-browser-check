@@ -1,6 +1,6 @@
 {
   "name": "rutoken-browser-check",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "check browser for cryptoPlugin compatibility",
   "main": "rutoken-browser-check.js",
   "repository": {

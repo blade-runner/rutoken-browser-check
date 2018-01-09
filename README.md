@@ -11,8 +11,10 @@ npm install rutoken-browser-check
 ```js
 window.onload = function () {
 
- rutoken.ready.then(function () {
-        return rutokenBrowserCheck.ifCompatible(rutoken.isExtensionInstalled);
+    rutoken.ready.then(function () {
+        return rutokenBrowserCheck.ifCompatible();
+    }).then(function (result) {
+        return rutoken.isExtensionInstalled();
     }).then(function (result) {
         return result ? rutoken.isPluginInstalled() : rutokenBrowserCheck.noExtension();
     }).then(function (result) {
@@ -38,15 +40,23 @@ window.onload = function () {
 
 * ifCompatible(extensionCheckFunction) -> Promise(bool)
 
-Функция позволяет узнать, совместим ли браузер с плагином Рутокен и в случае совместимости выполнить проверку на наличие расширения для браузера. В случае несовместимости выбрасывается исключение с текстом, конкретизирующим вариант несовместимости.
+Функция позволяет узнать, совместим ли браузер с плагином Рутокен и в случае совместимости выполнить проверку на наличие расширения для браузера. В случае несовместимости выбрасывается исключение, конкретизирующее вариант несовместимости.
+
+```js
+{
+    mnemonic: 'ERR_CODE',
+    description: 'Описание ошибки'
+}
+```
+Для совместимости с предыдущей версией метод toString перегружен и отдает description.
 
 * noExtension() -> Exception(message)
 
-Функция выбрасывает исключение с текстом, позволяющим узнать как поставить расширение для браузера, если оно доступно.
+Функция выбрасывает исключение, позволяющее узнать как поставить расширение для браузера, если оно доступно.
 
 * noPlugin() -> Exception(message)
 
-Функция выбрасывает исключение с текстом, позволяющим узнать как поставить плагин для браузера, если есть возможность утсановки в текущий браузер.
+Функция выбрасывает исключение, позволяющее узнать как поставить плагин для браузера, если есть возможность утсановки в текущий браузер.
 
 
 ## Лицензия
