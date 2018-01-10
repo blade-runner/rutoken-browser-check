@@ -35,7 +35,7 @@ var rutokenBrowserCheck = (function (rc) {
         var isChromeCompat = !!window.chrome;
         var performCheck = true;
 
-        if (bowser.osname === 'macOS' && bowser.version >= 47) {
+        if (bowser.osname === 'macOS' && bowser.opera && bowser.version >= 47) {
             throw new Err('NO_OPERA_47_MAC');
         }
 
