@@ -39,7 +39,7 @@ var rutokenBrowserCheck = (function (rc) {
             throw new Err('NO_OPERA_47_MAC');
         }
 
-        if (bowser.fireFox) {
+        if (bowser.name === 'Firefox') {
 
             if (bowser.osname !== 'Windows' && bowser.version >= 53) {
                 throw new Err('NO_FF_53_MAC_LINUX');
