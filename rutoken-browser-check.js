@@ -59,7 +59,7 @@ var rutokenBrowserCheck = (function (rc) {
     rc.noExtension = function () {
         if ((bowser.osname === 'Windows' || bowser.osname === 'macOS') && bowser.name === 'Opera') {
             throw new Err('INST_EXT_OPERA');
-        } else if (bowser.fireFox && bowser.osname === 'Windows') {
+        } else if (bowser.name === 'Firefox') {
             throw new Err('INST_EXT_FF');
         } else {
             throw new Err('INST_EXT');
