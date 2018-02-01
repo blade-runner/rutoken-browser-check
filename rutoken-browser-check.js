@@ -23,7 +23,7 @@ var rutokenBrowserCheck = (function (rc) {
         return this.description;
     };
 
-    rc.ifCompatible = function (extensionCheckFunction) {
+    rc.ifCompatible = function () {
 
         var noSupportYet = (bowser.osname === 'macOS' || bowser.osname === 'Linux') && bowser.name === 'Chrome';
         if (noSupportYet) {
@@ -49,10 +49,10 @@ var rutokenBrowserCheck = (function (rc) {
                 performCheck = false;
         }
 
-        if (performCheck && (isChromeCompat || bowser.name === 'Firefox') && bowser.osname === 'Windows' && extensionCheckFunction) {
-            return extensionCheckFunction();
+        if (performCheck && (isChromeCompat || bowser.name === 'Firefox') && bowser.osname === 'Windows') {
+            return { noCheckExtension : false};
         } else {
-            return Promise.resolve(true);
+            return { noCheckExtension : true};
         }
     };
 

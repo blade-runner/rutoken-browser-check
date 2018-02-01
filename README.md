@@ -14,7 +14,7 @@ window.onload = function () {
     rutoken.ready.then(function () {
         return rutokenBrowserCheck.ifCompatible();
     }).then(function (result) {
-        return rutoken.isExtensionInstalled();
+        return result.noCheckExtension || rutoken.isExtensionInstalled();
     }).then(function (result) {
         return result ? rutoken.isPluginInstalled() : rutokenBrowserCheck.noExtension();
     }).then(function (result) {
