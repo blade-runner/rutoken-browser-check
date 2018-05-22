@@ -1,3 +1,5 @@
+const bowser = require('bowser');
+
 var rutokenBrowserCheck = (function (rc) {
 
     var errors = {
