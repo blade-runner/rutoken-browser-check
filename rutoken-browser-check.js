@@ -19,11 +19,9 @@ var rutokenBrowserCheck = (function (rc) {
     function Err(mnemonic) {
         this.mnemonic = mnemonic;
         this.description = errors[mnemonic] || 'Ошибка';
-        this.bowserData = {
-            name: bowser.name,
-            osname: bowser.osname,
-            version: bowser.version
-        }
+        this.name = bowser.name;
+        this.osname = bowser.osname;
+        this.version = bowser.version;
     }
 
     Err.prototype.toString = function () {
