@@ -4,7 +4,6 @@ var rutokenBrowserCheck = (function (rc) {
 
     var errors = {
         'NO_SUPPORT_YET': 'Браузер временно не поддерживается. Пожалуйста, воспользуйтесь браузером Apple Safari или Mozilla Firefox.',
-        'NO_MSEDGE_SUPPORT': 'Браузер Edge временно не поддерживается.',
         'NO_OPERA_47_MAC': 'Opera 47+ не поддерживается плагином на MacOS',
         'NO_FF_53_MAC_LINUX': 'Firefox 53+ не поддерживается плагином на mac/linux',
         'INST_EXT_OPERA': 'Установите <a href="https://addons.opera.com/ru/extensions/details/adapter-rutoken-plagin/">расширение для Opera</a> или убедитесь, что оно активно.',
@@ -34,8 +33,6 @@ var rutokenBrowserCheck = (function (rc) {
         if (noSupportYet) {
             throw new Err('NO_SUPPORT_YET');
         }
-
-        if (bowser.msedge) throw new Err('NO_MSEDGE_SUPPORT');
 
         var isChromeCompat = !!window.chrome;
         var performCheck = true;
