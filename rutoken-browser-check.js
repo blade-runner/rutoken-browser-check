@@ -1,4 +1,6 @@
-const bowser = require('bowser');
+if (typeof require != 'undefined') {
+    bowser = require('bowser');
+}
 
 var rutokenBrowserCheck = (function (rc) {
 
